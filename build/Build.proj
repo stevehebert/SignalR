@@ -73,11 +73,6 @@
       <CopyArtifacts>false</CopyArtifacts>
     </Projects>
     <!-- Don't copy dll's from WinRT project -->
-    <Projects Include="$(ProjectRoot)\src\Microsoft.AspNet.SignalR.Client.WinRT\Microsoft.AspNet.SignalR.Client.WinRT.csproj">
-      <Build Condition="!$(WinRTSDKInstalled)">false</Build>
-      <Platform>WinRT</Platform>
-      <CopyArtifacts>false</CopyArtifacts>
-    </Projects>
     <!-- Only build the following clients if the SDK is installed -->
     <Projects Include="$(ProjectRoot)\src\Microsoft.AspNet.SignalR.Client.Portable\Microsoft.AspNet.SignalR.Client.Portable.csproj">
       <Build Condition="!$(WP8SDKInstalled)">false</Build>
@@ -124,11 +119,6 @@
       <Build Condition="$(Silverlight5SDKInstalled) != 'true'">false</Build>
       <Sample>true</Sample>
       <Platform>SL5</Platform>
-    </Projects>
-    <Projects Include="$(ProjectRoot)\samples\Microsoft.AspNet.SignalR.Client.WP8.Samples\Microsoft.AspNet.SignalR.Client.WP8.Samples.csproj">
-      <Build Condition="$(WP8SDKInstalled) != 'true'">false</Build>
-      <Sample>true</Sample>
-      <Platform>WP8</Platform>
     </Projects>
     <Projects Include="$(ProjectRoot)\samples\Microsoft.AspNet.SignalR.Client.WindowsStoreJavaScript.Samples\Microsoft.AspNet.SignalR.Client.WindowsStoreJavaScript.Samples.jsproj;
                        $(ProjectRoot)\samples\Microsoft.AspNet.SignalR.Client.WindowsStoreCSharp.Samples\Microsoft.AspNet.SignalR.Client.WindowsStoreCSharp.Samples.csproj">
